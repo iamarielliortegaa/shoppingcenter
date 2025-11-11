@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="600.0">
+    <GridPane alignment="center" hgap="10" prefHeight="523.0" prefWidth="818.0" vgap="10" xmlns:fx="http://javafx.com/fxml">
+
+        <TableView fx:id="productTableView" maxHeight="475.0" minWidth="300" prefHeight="175.0" prefWidth="500.0"
+                   GridPane.columnIndex="0" GridPane.columnSpan="3"
+                   GridPane.rowIndex="1" GridPane.rowSpan="5" />
+
+        <Button onAction="#onAddProductButtonClick" prefHeight="25.0" prefWidth="144.0" text="Add"
+                GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+        <Button fx:id="removeButton" onAction="#onRemoveProductButtonClick" prefHeight="25.0" prefWidth="144.0" text="Remove"
+                GridPane.columnIndex="2" GridPane.rowIndex="6" />
+
+        <columnConstraints>
+            <ColumnConstraints maxWidth="20" />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints maxWidth="20"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints  maxHeight="20"/>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints  maxHeight="20"/>
+        </rowConstraints>
+    </GridPane>
+</AnchorPane>
