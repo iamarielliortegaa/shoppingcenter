@@ -9,10 +9,23 @@
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.shopping.controller.AdminPageController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
     </padding>
 
-    <Label fx:id="welcomeText" text="Shopping Center"/>
-    <Button text="Manage Products" onAction="#onManageProductsClick"/>
-    <Button text="Manage Customers" onAction="#onManageCustomerClick"/>
+    <Label fx:id="welcomeText" text="Shopping Center" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <Label text="[Admin mode]" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c0e50;"/>
+
+    <Button text="Manage Products" onAction="#onManageProductsClick"
+            prefWidth="300"
+            style="-fx-background-color: #3498db;
+                       -fx-text-fill: white;
+                       -fx-font-size: 20px;
+                       -fx-background-radius: 10;"/>
+    <Button text="Manage Customers" onAction="#onManageCustomerClick"
+            prefWidth="300"
+            style="-fx-background-color: #2ecc71;
+                       -fx-text-fill: white;
+                       -fx-font-size: 20px;
+                       -fx-background-radius: 10;"/>
 </VBox>

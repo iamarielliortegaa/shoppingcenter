@@ -66,18 +66,22 @@ public class ProductManagementController {
     private void initialize() {
         TableColumn<Product, Integer> column1 = new TableColumn<>("Product ID");
         column1.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        column1.prefWidthProperty().bind(productTableView.widthProperty().multiply(0.15));
         productTableView.getColumns().add(column1);
 
         TableColumn<Product, String> column2 = new TableColumn<>("Part Name");
         column2.setCellValueFactory(new PropertyValueFactory<>("name"));
+        column2.prefWidthProperty().bind(productTableView.widthProperty().multiply(0.45));
         productTableView.getColumns().add(column2);
 
-        TableColumn<Product, Integer> column3 = new TableColumn<>("Inventory Level");
+        TableColumn<Product, Integer> column3 = new TableColumn<>("Stock");
         column3.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        column3.prefWidthProperty().bind(productTableView.widthProperty().multiply(0.10));
         productTableView.getColumns().add(column3);
 
         TableColumn<Product, Double> column4 = new TableColumn<>("Price/ Cost per Unit");
         column4.setCellValueFactory(new PropertyValueFactory<>("price"));
+        column4.prefWidthProperty().bind(productTableView.widthProperty().multiply(0.20));
         productTableView.getColumns().add(column4);
 
         productTableView.setItems(this.dataHandler.getAllProducts());
