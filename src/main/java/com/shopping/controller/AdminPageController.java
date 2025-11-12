@@ -22,9 +22,10 @@ public class AdminPageController {
     @FXML
     protected void onManageProductsClick() throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/shopping/shoppingcenter/project-management-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/shopping/controller/project-management-view.fxml"));
 
-        ProductManagementController controller = new ProductManagementController(this.dataHandler);
+        ProductManagementController controller = new ProductManagementController();
+        controller.setDataHandler(this.dataHandler);
         loader.setController(controller);
 
         Parent root = loader.load();
@@ -38,7 +39,7 @@ public class AdminPageController {
     @FXML
     protected void onManageCustomerClick() throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/shopping/shoppingcenter/customer-management-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/shopping/controller/customer-management-view.fxml"));
 
         CustomerManagementController controller = new CustomerManagementController(this.dataHandler);
         loader.setController(controller);

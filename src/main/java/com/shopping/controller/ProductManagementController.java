@@ -19,15 +19,19 @@ public class ProductManagementController {
     @FXML
     private Button removeButton;
 
-    public ProductManagementController(DataHandler dataHandler)
+    public ProductManagementController()
     {
-        this.dataHandler = dataHandler;
+
+    }
+
+    public void setDataHandler(DataHandler handler) {
+        this.dataHandler = handler;
     }
 
     @FXML
-    protected void onAddProductButtonClick() throws IOException{
+    protected void onAddProductButtonClick() {
         try {
-            AddProductDialogController dialog = new AddProductDialogController(dataHandler);
+            AddProductDialogController dialog = new AddProductDialogController();
             dialog.showAndWait().ifPresent(result -> {
                 try {
                     addProduct(result);
@@ -35,7 +39,13 @@ public class ProductManagementController {
                     e.printStackTrace();
                 }
             });
-        } catch (Exception ex) { }
+        } catch (Exception ex)
+        {
+            Alert alert2 = new Alert(Alert.AlertType.WARNING);
+            alert2.setHeaderText("Invalid Product Data");
+            alert2.setContentText(ex.toString());
+            alert2.showAndWait();
+        }
     }
 
     private void addProduct(Product product) throws IOException
@@ -81,7 +91,7 @@ public class ProductManagementController {
 
         TableColumn<Product, Double> column4 = new TableColumn<>("Price/ Cost per Unit");
         column4.setCellValueFactory(new PropertyValueFactory<>("price"));
-        column4.prefWidthProperty().bind(productTableView.widthProperty().multiply(0.20));
+        column4.prefWidthProperty().bind(productTableView.widthProperty().multiply(0.30));
         productTableView.getColumns().add(column4);
 
         productTableView.setItems(this.dataHandler.getAllProducts());

@@ -64,20 +64,24 @@ public class CustomerManagementController {
 
     @FXML
     private void initialize() {
-        TableColumn<Customer, Integer> column1 = new TableColumn<>("Customer ID");
+        TableColumn<Customer, Integer> column1 = new TableColumn<>("ID");
         column1.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        column1.prefWidthProperty().bind(customerTableView.widthProperty().multiply(0.05));
         customerTableView.getColumns().add(column1);
 
         TableColumn<Customer, String> column2 = new TableColumn<>("Part Name");
         column2.setCellValueFactory(new PropertyValueFactory<>("name"));
+        column2.prefWidthProperty().bind(customerTableView.widthProperty().multiply(0.30));
         customerTableView.getColumns().add(column2);
 
         TableColumn<Customer, Integer> column3 = new TableColumn<>("Address");
         column3.setCellValueFactory(new PropertyValueFactory<>("address"));
+        column3.prefWidthProperty().bind(customerTableView.widthProperty().multiply(0.35));
         customerTableView.getColumns().add(column3);
 
         TableColumn<Customer, Double> column4 = new TableColumn<>("Card Detail");
         column4.setCellValueFactory(new PropertyValueFactory<>("cardDetail"));
+        column4.prefWidthProperty().bind(customerTableView.widthProperty().multiply(0.30));
         customerTableView.getColumns().add(column4);
 
         customerTableView.setItems(this.dataHandler.getAllCustomers());
