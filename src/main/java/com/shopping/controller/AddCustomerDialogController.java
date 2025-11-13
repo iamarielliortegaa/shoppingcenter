@@ -4,10 +4,7 @@ import com.shopping.data.Customer;
 import com.shopping.data.DataHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
@@ -24,16 +21,12 @@ public class AddCustomerDialogController extends Dialog<Customer> {
 
     /**
      * Constructor
-     *
-     * @param  dataHandler Object
      */
-    public AddCustomerDialogController(DataHandler dataHandler) throws IOException {
+    public AddCustomerDialogController() throws IOException {
 
         this.customer = new Customer();
 
-        setTitle("Add Product");
-
-        getDialogPane().getButtonTypes().setAll(saveButtonType, ButtonType.CANCEL);
+        setTitle("Add Customer");
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("add-customer-view.fxml"));
         loader.setController(this);
@@ -78,6 +71,29 @@ public class AddCustomerDialogController extends Dialog<Customer> {
                 cardFilled = false;
         });
 
+        getDialogPane().getButtonTypes().setAll(saveButtonType, ButtonType.CANCEL);
+
+        Button saveButton = (Button) getDialogPane().lookupButton(saveButtonType);
+        saveButton.setStyle("""
+                -fx-background-color: #184752; 
+                -fx-text-fill: white; 
+                -fx-font-weight: bold; 
+                -fx-font-size: 14px; 
+                -fx-pref-width: 150px; 
+                -fx-pref-height: 40px; 
+                -fx-background-radius: 6;
+                """);
+
+        Button cancelButton = (Button) getDialogPane().lookupButton(ButtonType.CANCEL);
+        cancelButton.setStyle("""
+                -fx-background-color: #a93237; 
+                -fx-text-fill: white; 
+                -fx-font-weight: bold; 
+                -fx-font-size: 14px; 
+                -fx-pref-width: 150px; 
+                -fx-pref-height: 40px; 
+                -fx-background-radius: 6;
+                """);
 
     }
 }

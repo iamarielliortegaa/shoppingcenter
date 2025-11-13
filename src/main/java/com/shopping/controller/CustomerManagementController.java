@@ -27,7 +27,7 @@ public class CustomerManagementController {
     @FXML
     protected void onAddCustomerButtonClick() {
         try {
-            AddCustomerDialogController dialog = new AddCustomerDialogController(dataHandler);
+            AddCustomerDialogController dialog = new AddCustomerDialogController();
             dialog.showAndWait().ifPresent(result -> {
                 try {
                     addCustomer(result);

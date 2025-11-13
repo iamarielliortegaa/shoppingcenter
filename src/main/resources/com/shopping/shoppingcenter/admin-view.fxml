@@ -7,7 +7,8 @@
 <?import javafx.scene.control.Button?>
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.shopping.controller.AdminPageController">
+      fx:controller="com.shopping.controller.AdminPageController"
+      style="-fx-background-color: linear-gradient(to bottom right, #d0dfe5, #869cb0);">
     <padding>
         <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
     </padding>
@@ -18,13 +19,13 @@
 
     <Button text="Manage Products" onAction="#onManageProductsClick"
             prefWidth="300"
-            style="-fx-background-color: #3498db;
+            style="-fx-background-color: darkcyan;
                        -fx-text-fill: white;
                        -fx-font-size: 20px;
                        -fx-background-radius: 10;"/>
     <Button text="Manage Customers" onAction="#onManageCustomerClick"
             prefWidth="300"
-            style="-fx-background-color: #2ecc71;
+            style="-fx-background-color: #0059ff;
                        -fx-text-fill: white;
                        -fx-font-size: 20px;
                        -fx-background-radius: 10;"/>

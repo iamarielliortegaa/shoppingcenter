@@ -66,6 +66,29 @@ public class AddProductDialogController extends Dialog<Product> {
         ButtonType saveButtonType = new ButtonType("Save", ButtonBar.ButtonData.OK_DONE);
         getDialogPane().getButtonTypes().setAll(saveButtonType, ButtonType.CANCEL);
 
+        Button saveButton = (Button) getDialogPane().lookupButton(saveButtonType);
+        saveButton.setStyle("""
+                -fx-background-color: #184752; 
+                -fx-text-fill: white; 
+                -fx-font-weight: bold; 
+                -fx-font-size: 14px; 
+                -fx-pref-width: 150px; 
+                -fx-pref-height: 40px; 
+                -fx-background-radius: 6;
+                """);
+
+        Button cancelButton = (Button) getDialogPane().lookupButton(ButtonType.CANCEL);
+        cancelButton.setStyle("""
+                -fx-background-color: #a93237; 
+                -fx-text-fill: white; 
+                -fx-font-weight: bold; 
+                -fx-font-size: 14px; 
+                -fx-pref-width: 150px; 
+                -fx-pref-height: 40px; 
+                -fx-background-radius: 6;
+                """);
+
+
         try {
             setResultConverter(dialogButton ->
                     (nameFilled && inventoryFilled && priceFilled) ? this.product : null );
