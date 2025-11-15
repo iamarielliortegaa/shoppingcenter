@@ -130,14 +130,14 @@ public class StorageManagerTest
     {
         File productFile = new File(PRODUCT_FILE_NAME);
 
-        if (!productFile.exists())
+        if (productFile.exists())
         {
             productFile.delete();
         }
 
         File customerFile = new File(CUSTOMER_FILE_NAME);
 
-        if (!customerFile.exists())
+        if (customerFile.exists())
         {
             customerFile.delete();
         }
