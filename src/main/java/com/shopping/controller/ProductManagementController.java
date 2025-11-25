@@ -19,6 +19,9 @@ public class ProductManagementController {
     @FXML
     private Button removeButton;
 
+    @FXML
+    private Button addButton;
+
     public ProductManagementController()
     {
 
@@ -95,6 +98,8 @@ public class ProductManagementController {
         productTableView.getColumns().add(column4);
 
         productTableView.setItems(this.dataHandler.getAllProducts());
+
+        addButton.setVisible(this.dataHandler.getAllowedToBeRemoved());
 
         removeButton.setVisible(this.dataHandler.getAllowedToBeRemoved());
     }

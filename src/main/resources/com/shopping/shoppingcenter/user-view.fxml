@@ -6,6 +6,8 @@
 
 <?import javafx.scene.control.Button?>
 
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.shopping.controller.UserPageController"
       style="-fx-background-color: linear-gradient(to bottom right, #87b0c0, #7bcde0);">
@@ -17,14 +19,29 @@
 
     <Label text="[User Mode]" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c0e50;"/>
 
-    <Button text="Manage Products" onAction="#onManageProductsClick"
+    <HBox spacing="10" alignment="CENTER">
+        <ComboBox fx:id="customerComboBox" prefWidth="220"/>
+        <Button fx:id="loginButton"
+                text="Login"
+                onAction="#onLoginClick"
+                prefWidth="80"
+                style="-fx-background-color: #2ecc71;
+                       -fx-text-fill: white;
+                       -fx-font-size: 14px;
+                       -fx-background-radius: 8;"/>
+    </HBox>
+    <Button fx:id="viewProductsButton"
+            text="View Products" onAction="#onManageProductsClick"
             prefWidth="300"
+            visible="false"
             style="-fx-background-color: darkcyan;
                        -fx-text-fill: white;
                        -fx-font-size: 20px;
                        -fx-background-radius: 10;"/>
-    <Button text="Manage Customers" onAction="#onManageCustomerClick"
+    <Button fx:id="purchaseButton"
+            text="Purchase" onAction="#onPurchaseProductsClick"
             prefWidth="300"
+            visible="false"
             style="-fx-background-color: #0059ff;
                        -fx-text-fill: white;
                        -fx-font-size: 20px;

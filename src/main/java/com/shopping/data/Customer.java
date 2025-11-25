@@ -1,5 +1,10 @@
 package com.shopping.data;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.util.ArrayList;
+
 public class Customer
 {
     private int id;
@@ -7,11 +12,15 @@ public class Customer
     private String address;
     private String cardDetail;
 
+    private ArrayList<Product> cartProducts = new ArrayList<>();
+
+    private ObservableList<Product> allcartProducts;
+
     /**
      * Constructor
      */
     public Customer() {
-
+        allcartProducts = FXCollections.observableArrayList(cartProducts);
     }
 
     /**
@@ -27,6 +36,8 @@ public class Customer
         this.name = name;
         this.address = address;
         this.cardDetail = cardDetail;
+
+        allcartProducts = FXCollections.observableArrayList(cartProducts);
     }
 
     /**
@@ -99,5 +110,38 @@ public class Customer
      */
     public void setCardDetail(String cardDetail) {
         this.cardDetail = cardDetail;
+    }
+
+    public void resetCart()
+    {
+        allcartProducts.clear();
+    }
+
+    /**
+     * API to add a product to cart
+     *
+     * @param  product tobe set
+     */
+    public void addToCart(Product product) {
+        allcartProducts.add(product);
+    }
+
+    /**
+     * API to remove a product from cart
+     *
+     * @param  product tobe removed
+     */
+    public void removeFromCart(Product product) {
+        allcartProducts.remove(product);
+    }
+
+    /**
+     * API to look up a list of cart products
+     *
+     * @return list of cart products
+     */
+    public ObservableList<Product> getCartProducts()
+    {
+        return allcartProducts;
     }
 }

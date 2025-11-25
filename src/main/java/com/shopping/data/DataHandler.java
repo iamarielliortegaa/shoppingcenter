@@ -20,6 +20,9 @@ public class DataHandler {
 
     private boolean allowedToBeRemoved;
 
+    private Customer selectedCustomer;
+
+
     /**
      * Constructor
      */
@@ -32,6 +35,28 @@ public class DataHandler {
 
         allCustomers = FXCollections.observableArrayList(customers);
         allProducts = FXCollections.observableArrayList(products);
+
+        if (!allCustomers.isEmpty()) {
+            selectedCustomer = allCustomers.get(0);
+        }
+    }
+
+    /**
+     * API to get selected Customer
+     *
+     * @return selectedCustomer
+     */
+    public Customer getSelectedCustomer() {
+        return selectedCustomer;
+    }
+
+    /**
+     * API to set selected Customer
+     *
+     * @param  selectedCustomer tobe added
+     */
+    public void setSelectedCustomer(Customer selectedCustomer) {
+        this.selectedCustomer = selectedCustomer;
     }
 
     /**
